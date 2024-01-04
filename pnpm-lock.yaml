@@ -96,10 +96,10 @@ devDependencies:
     version: 3.1.1
   react-i18next:
     specifier: ^14.0.0
-    version: 14.0.0(i18nextServer@23.7.15)(react-dom@18.2.0)(react@18.2.0)
+    version: 14.0.0(i18next@23.7.15)(react-dom@18.2.0)(react@18.2.0)
   remix-i18next:
     specifier: ^5.5.0
-    version: 5.5.0(@remix-run/react@2.4.1)(@remix-run/server-runtime@2.4.1)(i18nextServer@23.7.15)(react-i18nextServer@14.0.0)(react@18.2.0)
+    version: 5.5.0(@remix-run/react@2.4.1)(@remix-run/server-runtime@2.4.1)(i18next@23.7.15)(react-i18next@14.0.0)(react@18.2.0)
   tailwindcss:
     specifier: ^3.4.0
     version: 3.4.0
@@ -5735,7 +5735,7 @@ packages:
       intl-parse-accept-language: 1.0.0
       lru-cache: 7.18.3
       react: 18.2.0
-      react-i18next: 14.0.0(i18nextServer@23.7.15)(react-dom@18.2.0)(react@18.2.0)
+      react-i18next: 14.0.0(i18next@23.7.15)(react-dom@18.2.0)(react@18.2.0)
       use-consistent-value: 1.0.0(react@18.2.0)
     dev: true
 
