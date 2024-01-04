@@ -12,7 +12,7 @@ import { PassThrough } from "stream"
 
 import i18nextServer from "@/services/i18next.server"
 
-import i18n from "./i18n" // your i18n configuration file
+import i18n from "./i18n"
 
 const ABORT_DELAY = 5000
 

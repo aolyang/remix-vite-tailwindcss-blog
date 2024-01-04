@@ -1,6 +1,6 @@
 import "./tailwind.css"
 
-import { json, type LoaderFunctionArgs } from "@remix-run/node"
+import { json, type LoaderFunctionArgs, type MetaFunction } from "@remix-run/node"
 import {
     Links,
     LiveReload,
@@ -16,10 +16,26 @@ import { useChangeLanguage } from "remix-i18next"
 import i18nextServer from "@/services/i18next.server"
 import { site } from "@/site"
 
-export async function loader({ request }: LoaderFunctionArgs) {
+import Header from "./components/Header"
+
+export const loader = async ({ request }: LoaderFunctionArgs) => {
     const locale = await i18nextServer.getLocale(request)
-    return json({ locale })
+    return json({ locale: locale })
 }
+
+export const meta: MetaFunction = () => {
+    return [
+        {
+            name: "description",
+            content: site.description
+        },
+        {
+            name: "keywords",
+            content: site.keywords
+        }
+    ]
+}
+
 export default function App() {
     // Get the locale from the loader
     const { locale } = useLoaderData<typeof loader>()
@@ -41,10 +57,12 @@ export default function App() {
                 <Links />
             </head>
             <body>
-                <Outlet />
                 <ScrollRestoration />
                 <Scripts />
                 <LiveReload />
+                <Header>
+                    <Outlet />
+                </Header>
             </body>
         </html>
     )

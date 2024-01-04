@@ -1,10 +1,5 @@
-import { type MetaFunction } from "@remix-run/node"
-import { Link } from "@remix-run/react"
+import { Link, Outlet } from "@remix-run/react"
 import { useTranslation } from "react-i18next"
-
-export const meta: MetaFunction = () => {
-    return [{ title: "New Remix App" }, { name: "description", content: "Welcome to Remix!" }]
-}
 
 export default function Index() {
     const { t, i18n } = useTranslation()
@@ -38,6 +33,7 @@ export default function Index() {
                     </a>
                 </li>
             </ul>
+            <Outlet />
         </div>
     )
 }
