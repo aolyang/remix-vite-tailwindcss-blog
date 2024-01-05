@@ -1,0 +1,11 @@
+header.nav-header {
+  ul {
+    li:hover {
+      @apply underline decoration-wavy underline-offset-8
+    }
+
+    li.active {
+      @apply underline decoration-wavy underline-offset-8
+    }
+  }
+}
