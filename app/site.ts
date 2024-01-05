@@ -2,6 +2,7 @@ export type Site = {
     title: string
     description: string
     keywords: string
+    github: string
 }
 
 export const site: Site = {
@@ -10,5 +11,6 @@ export const site: Site = {
     keywords:
         "remix, react, typescript, blog, template, starter, tailwindcss," +
         "markdown, md, mdx, express, fullstack," +
-        "SEO, seo, rss, remix blog"
+        "SEO, seo, rss, remix blog",
+    github: "https://github.com/aolyang/remix-vite-tailwindcss-blog.git"
 }

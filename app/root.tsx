@@ -1,4 +1,5 @@
-import "./tailwind.css"
+import "@/styles/tailwind.css"
+import "@/styles/base.css"
 
 import { json, type LoaderFunctionArgs, type MetaFunction } from "@remix-run/node"
 import {

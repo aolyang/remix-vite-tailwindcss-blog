@@ -14,12 +14,12 @@ export default function Header({ children }: { children: ReactNode }) {
     const location = useLocation()
     return (
         <>
-            <header className={"nav-header p-4 w-full flex justify-center"}>
+            <header className={"nav-header p-8 w-full flex justify-center"}>
                 <div className={"w-[48rem] flex justify-between"}>
-                    <h1 className={"text-2xl"}>
+                    <h1 className={"text-2xl tracking-wide font-medium"}>
                         <Link to={"/"}>{site.title}</Link>
                     </h1>
-                    <ul className={"flex gap-4"}>
+                    <ul className={"flex gap-8"}>
                         {navs.map((nav) => (
                             <li
                                 key={nav}
@@ -33,8 +33,10 @@ export default function Header({ children }: { children: ReactNode }) {
                     </ul>
                 </div>
             </header>
-            <hr />
-            <main className={"w-[48rem] m-auto"}>{children}</main>
+            <main className={"w-[48rem] m-auto"}>
+                <hr />
+                {children}
+            </main>
         </>
     )
 }
