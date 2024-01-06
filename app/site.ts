@@ -2,7 +2,9 @@ export type Site = {
     title: string
     description: string
     keywords: string
+    website: string
     github: string
+    lastModTime: string
 }
 
 export const site: Site = {
@@ -12,5 +14,7 @@ export const site: Site = {
         "remix, react, typescript, blog, template, starter, tailwindcss," +
         "markdown, md, mdx, express, fullstack," +
         "SEO, seo, rss, remix blog",
-    github: "https://github.com/aolyang/remix-vite-tailwindcss-blog.git"
+    website: "https://example.app/",
+    github: "https://github.com/aolyang/remix-vite-tailwindcss-blog.git",
+    lastModTime: new Date().toISOString()
 }
