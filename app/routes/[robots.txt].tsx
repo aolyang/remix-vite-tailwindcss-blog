@@ -2,14 +2,16 @@ import { site } from "@/site"
 
 export const loader = async () => {
     const content = `
-    User-agent: Googlebot
-    Disallow: /nogooglebot/
-    
-    User-agent: *
-    Allow: /
-    
-    Sitemap: ${new URL("sitemap-index.xml", site.website).href}
-    `.trim()
+        User-agent: Googlebot
+        Disallow: /nogooglebot/
+        
+        User-agent: *
+        Allow: /
+        
+        Sitemap: ${new URL("sitemap-index.xml", site.website).href}
+    `
+        .replace(/^\n/, "")
+        .replace(/^ +/gm, "")
 
     return new Response(content, {
         status: 200,
