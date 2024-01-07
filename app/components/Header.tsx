@@ -25,7 +25,7 @@ export default function Header({ children }: { children: ReactNode }) {
                     {navs.map((nav) => (
                         <div
                             key={nav}
-                            className={clsx("nav-item", {
+                            className={clsx("nav-item hover:text-primary", {
                                 active: location.pathname.startsWith(`/${nav}`)
                             })}
                         >
