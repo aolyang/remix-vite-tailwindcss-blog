@@ -7,18 +7,14 @@ import { clsx } from "clsx"
 import { type ReactNode } from "react"
 
 import Spacer from "@/components/Spacer"
-import { Theme, useTheme } from "@/providers/theme-context"
+import ThemeToggleBtn from "@/components/ThemeToggleBtn"
 import { site } from "@/site"
 
 const navs = ["posts", "tags", "categories", "about"]
 export default function Header({ children }: { children: ReactNode }) {
     const { t } = useTranslation()
     const location = useLocation()
-    const [, setTheme] = useTheme()
 
-    const toggleTheme = () => {
-        setTheme((prevTheme) => (prevTheme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT))
-    }
     return (
         <>
             <header className={"nav-header p-8 w-full flex justify-center"}>
@@ -29,7 +25,7 @@ export default function Header({ children }: { children: ReactNode }) {
                     {navs.map((nav) => (
                         <div
                             key={nav}
-                            className={clsx({
+                            className={clsx("nav-item", {
                                 active: location.pathname.startsWith(`/${nav}`)
                             })}
                         >
@@ -37,7 +33,7 @@ export default function Header({ children }: { children: ReactNode }) {
                         </div>
                     ))}
                     <Spacer />
-                    <button onClick={toggleTheme}>Toggle</button>
+                    <ThemeToggleBtn />
                 </div>
             </header>
             <main className={"w-[48rem] m-auto"}>

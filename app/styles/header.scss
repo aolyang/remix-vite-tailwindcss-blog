@@ -1,10 +1,10 @@
 header.nav-header {
-  ul {
-    li:hover {
+  div {
+    div.nav-item:hover {
       @apply underline decoration-wavy underline-offset-8
     }
 
-    li.active {
+    div.nav-item.active {
       @apply underline decoration-wavy underline-offset-8
     }
   }
