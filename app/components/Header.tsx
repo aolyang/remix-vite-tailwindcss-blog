@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next"
 import { clsx } from "clsx"
 import { type ReactNode } from "react"
 
+import LanguageToggleBtn from "@/components/LanguageToggleBtn"
 import Spacer from "@/components/Spacer"
 import ThemeToggleBtn from "@/components/ThemeToggleBtn"
 import { site } from "@/site"
@@ -33,6 +34,7 @@ export default function Header({ children }: { children: ReactNode }) {
                         </div>
                     ))}
                     <Spacer />
+                    <LanguageToggleBtn />
                     <ThemeToggleBtn />
                 </div>
             </header>
