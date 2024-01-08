@@ -19,7 +19,7 @@ export default function Header({ children }: { children: ReactNode }) {
     return (
         <>
             <header className={"nav-header p-8 w-full flex justify-center"}>
-                <div className={"w-[48rem] flex gap-8 items-baseline"}>
+                <div className={"w-[48rem] flex gap-8 items-center"}>
                     <h1 className={"text-2xl tracking-wide font-medium"}>
                         <Link to={"/"}>{site.title}</Link>
                     </h1>
@@ -34,8 +34,10 @@ export default function Header({ children }: { children: ReactNode }) {
                         </div>
                     ))}
                     <Spacer />
-                    <LanguageToggleBtn />
-                    <ThemeToggleBtn />
+                    <div className={"inline-flex gap-4"}>
+                        <LanguageToggleBtn />
+                        <ThemeToggleBtn />
+                    </div>
                 </div>
             </header>
             <main className={"w-[48rem] m-auto"}>
