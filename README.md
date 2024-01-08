@@ -29,3 +29,8 @@ pnpm start
 ```
 
 Now you'll need to pick a host to deploy it to.
+
+## Links
+
+https://dev.to/chrisbenjamin/tutorial-add-sitemapxml-and-robotstxt-to-remix-site-4n23
+https://www.mattstobbs.com/remix-dark-mode/#1-naive-dark-mode-switch

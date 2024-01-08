@@ -91,6 +91,9 @@ module.exports = {
                     { name: "Link", linkAttribute: "to" },
                     { name: "NavLink", linkAttribute: "to" }
                 ]
+            },
+            rules: {
+                "react/prop-types": "off"
             }
         },
 
@@ -100,7 +103,7 @@ module.exports = {
             plugins: ["@typescript-eslint", "import"],
             parser: "@typescript-eslint/parser",
             settings: {
-                "import/internal-regex": "^~/",
+                "import/internal-regex": "^@/",
                 "import/resolver": {
                     node: {
                         extensions: [".ts", ".tsx"]
