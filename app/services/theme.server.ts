@@ -9,7 +9,7 @@ if (!sessionSecret) {
 
 const themeStorage = createCookieSessionStorage({
     cookie: {
-        name: "remix-theme",
+        name: "theme",
         secure: true,
         secrets: [sessionSecret],
         sameSite: "lax",

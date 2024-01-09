@@ -1,4 +1,7 @@
+import { useFetcher } from "@remix-run/react"
 import { useTranslation } from "react-i18next"
+
+import { useEffect, useRef } from "react"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -10,7 +13,22 @@ import {
 
 export default function LanguageToggleBtn() {
     const { i18n } = useTranslation()
-    const changeLanguage = (lng: string) => () => i18n.changeLanguage(lng)
+
+    const persistLocale = useFetcher()
+    const persistLocaleRef = useRef(persistLocale)
+    useEffect(() => {
+        persistLocaleRef.current = persistLocale
+    }, [persistLocale])
+    const changeLanguage = (lng: string) => () => {
+        i18n.changeLanguage(lng)
+        persistLocaleRef.current.submit(
+            { locale: lng },
+            {
+                action: "action/set-locale",
+                method: "post"
+            }
+        )
+    }
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>

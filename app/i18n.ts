@@ -1,9 +1,9 @@
 import { type InitOptions } from "i18next"
 
-export const supportedLngs = ["en", "zh"]
+export const supportedLanguages = ["en", "zh"]
 
 export default {
-    supportedLngs,
+    supportedLngs: supportedLanguages,
     fallbackLng: "en",
     defaultNS: "common",
     react: { useSuspense: false }
