@@ -1,6 +1,6 @@
 import { resolve } from "node:path"
 
-import { createCookie, createCookieSessionStorage } from "@remix-run/node"
+import { createCookieSessionStorage } from "@remix-run/node"
 import Backend from "i18next-fs-backend"
 import { RemixI18Next } from "remix-i18next"
 
@@ -36,14 +36,8 @@ export async function getI18nSession(request: Request) {
     }
 }
 
-export const i18nCookie = createCookie("i18n", {
-    path: "/",
-    sameSite: "lax"
-})
-
 const i18nextServer = new RemixI18Next({
     detection: {
-        cookie: i18nCookie,
         sessionStorage: i18nStorage,
         supportedLanguages,
         fallbackLanguage: i18n.fallbackLng

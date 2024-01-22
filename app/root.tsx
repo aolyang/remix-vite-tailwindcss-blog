@@ -19,7 +19,7 @@ import { clsx } from "clsx"
 import Header from "@/components/Header"
 import { type Theme, useTheme } from "@/providers/theme-context"
 import { NonFlashOfWrongThemeEls, ThemeProvider } from "@/providers/theme-provider"
-import i18nextServer, { getI18nSession, i18nCookie } from "@/services/i18next.server"
+import i18nextServer, { getI18nSession } from "@/services/i18next.server"
 import { getThemeSession } from "@/services/theme.server"
 import { site } from "@/site"
 
@@ -33,18 +33,10 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     const i18nSession = await getI18nSession(request)
     const themeSession = await getThemeSession(request)
 
-    console.log("i18nSession", i18nSession.getLocale(), locale)
-    return json(
-        {
-            locale: i18nSession.getLocale() || locale,
-            theme: themeSession.getTheme()
-        } satisfies LoaderData,
-        {
-            headers: {
-                "Set-Cookie": await i18nCookie.serialize(locale)
-            }
-        }
-    )
+    return json({
+        locale: i18nSession.getLocale() || locale,
+        theme: themeSession.getTheme()
+    } satisfies LoaderData)
 }
 
 export const meta: MetaFunction = () => {
@@ -72,7 +64,6 @@ function App() {
     // language, this locale will change and i18nextServer will load the correct
     // translation files
     useChangeLanguage(data.locale)
-    console.log("data.locale from loader", data.locale, i18n.language)
     return (
         <html lang={data.locale} dir={i18n.dir()} className={clsx(theme)}>
             <head>

@@ -19,8 +19,8 @@ export default function LanguageToggleBtn() {
     useEffect(() => {
         persistLocaleRef.current = persistLocale
     }, [persistLocale])
-    const changeLanguage = (lng: string) => () => {
-        i18n.changeLanguage(lng)
+    const changeLanguage = (lng: string) => async () => {
+        await i18n.changeLanguage(lng)
         persistLocaleRef.current.submit(
             { locale: lng },
             {
