@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import {
     DropdownMenu,
     DropdownMenuContent,
-    DropdownMenuLabel,
+    DropdownMenuItem,
     DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu"
 
@@ -61,14 +61,14 @@ export default function LanguageToggleBtn() {
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
-                <DropdownMenuLabel className={"p-0"}>
+                <DropdownMenuItem className={"p-0"}>
                     <Button variant={"link"} onClick={changeLanguage("en")}>
                         English
                     </Button>
-                </DropdownMenuLabel>
-                <DropdownMenuLabel className={"p-0"} onClick={changeLanguage("zh")}>
+                </DropdownMenuItem>
+                <DropdownMenuItem className={"p-0"} onClick={changeLanguage("zh")}>
                     <Button variant={"link"}>简体中文</Button>
-                </DropdownMenuLabel>
+                </DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>
     )
