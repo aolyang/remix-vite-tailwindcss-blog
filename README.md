@@ -2,6 +2,13 @@
 
 📖 See the [Remix docs](https://remix.run/docs) and the [Remix Vite docs](https://remix.run/docs/en/main/future/vite) for details on supported features.
 
+## NOTICE
+
+this is a template for remix + vite, try to explore Remix.
++ **light/dark** theme.
++ **i18n** (remix-i18next) cached in session.
++ cheap **responsive ui** for header and home page.
+
 ## Development
 
 Run the Express server with Vite dev middleware:
