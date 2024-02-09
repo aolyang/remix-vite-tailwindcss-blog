@@ -5,9 +5,21 @@
 ## NOTICE
 
 this is a template for remix + vite, try to explore Remix.
+
 + **light/dark** theme.
 + **i18n** (remix-i18next) cached in session.
 + cheap **responsive ui** for header and home page.
+
+## Next plan
+
+after this exploration, I found something I want to build:
+
+1. Remix + Sqlite + Prisma + TailwindCSS + Light/Dark Theme + i18n + ResponsiveUI
+2. Editor: Web/Electron Editor App for syncing markdown files
+3. BlogSite: Post, HomePage, Tags, Search
+4. Monorepo
+
+heavy client-side editor feature is challenging
 
 ## Development
 
